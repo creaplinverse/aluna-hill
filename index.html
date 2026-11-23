@@ -167,7 +167,8 @@ section.loc{padding:clamp(72px,9vw,120px) 0;border-top:1px solid var(--line)}
 /* ---------- Social ---------- */
 section.social{padding:clamp(72px,9vw,120px) 0;border-top:1px solid var(--line)}
 .feed{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
-.feed .ph{aspect-ratio:1}
+.feed .ph{aspect-ratio:1;display:block;transition:opacity .2s ease}
+.feed a.ph:hover{opacity:.85}
 .feed .ph:not(.has-img)::after{content:"IG " attr(data-label);left:8px;bottom:8px;font-size:9.5px;padding:4px 6px}
 .handles{display:flex;flex-wrap:wrap;gap:12px}
 
@@ -260,7 +261,7 @@ footer ul a:hover{color:var(--muted)}
 </head>
 <body>
 
-<div class="demo">Contoh desain dari <b>Creaplin</b> untuk Aluna Hill · foto &amp; beberapa teks masih placeholder</div>
+<div class="demo">Contoh desain dari <b>Creaplin</b> untuk Aluna Hill · ulasan tamu masih contoh</div>
 
 <header class="top">
   <div class="wrap">
@@ -445,7 +446,7 @@ footer ul a:hover{color:var(--muted)}
       <div class="cap rv">
         <div class="eyebrow">Suasana</div>
         <h3>Pagi yang pelan, <span class="soft">udara sejuk Bukittinggi.</span></h3>
-        <p>Bagian ini nanti diisi foto-foto dari Instagram Aluna Hill, setelah ada izin dari pemilik.</p>
+        <p>Lobi yang terang, sudut duduk yang hangat, dan kamar yang siap untuk keluarga. Semua foto dari Instagram Aluna Hill.</p>
       </div>
     </div>
   </section>
@@ -513,12 +514,12 @@ footer ul a:hover{color:var(--muted)}
         </div>
       </div>
       <div class="feed rv">
-        <div class="ph" data-photo="ig1" data-label="1"></div>
-        <div class="ph" data-photo="ig2" data-label="2"></div>
-        <div class="ph" data-photo="ig3" data-label="3"></div>
-        <div class="ph" data-photo="ig4" data-label="4"></div>
-        <div class="ph" data-photo="ig5" data-label="5"></div>
-        <div class="ph" data-photo="ig6" data-label="6"></div>
+        <a class="ph" data-photo="ig1" data-label="1" href="https://www.instagram.com/reel/DV7jNQPkpTP/" target="_blank" rel="noopener" aria-label="Posting Instagram Aluna Hill 1"></a>
+        <a class="ph" data-photo="ig2" data-label="2" href="https://www.instagram.com/reel/Da64FkBSrWD/" target="_blank" rel="noopener" aria-label="Posting Instagram Aluna Hill 2"></a>
+        <a class="ph" data-photo="ig3" data-label="3" href="https://www.instagram.com/reel/Da1ZOpeS039/" target="_blank" rel="noopener" aria-label="Posting Instagram Aluna Hill 3"></a>
+        <a class="ph" data-photo="ig4" data-label="4" href="https://www.instagram.com/reel/DXviiAqypLN/" target="_blank" rel="noopener" aria-label="Posting Instagram Aluna Hill 4"></a>
+        <a class="ph" data-photo="ig5" data-label="5" href="https://www.instagram.com/reel/DXtKULoEoEd/" target="_blank" rel="noopener" aria-label="Posting Instagram Aluna Hill 5"></a>
+        <a class="ph" data-photo="ig6" data-label="6" href="https://www.instagram.com/reel/DXS-KtCEi_U/" target="_blank" rel="noopener" aria-label="Posting Instagram Aluna Hill 6"></a>
       </div>
     </div>
   </section>
@@ -594,14 +595,21 @@ const CONFIG = {
 
   MAPS_QUERY: "Aluna Hill Bukittinggi, Jl. Prof. Hazairin No.61, Bukittinggi",
 
-  // FOTO: izin pakai foto IG belum ada. Isi path/URL foto di sini
-  // (mis. "foto/hero.jpg"). Kosong = tampil kotak placeholder.
+  // FOTO: dari Instagram @alunahill.bukittinggi (disetujui Creaplin
+  // untuk contoh ini). Ganti path-nya untuk menukar foto.
+  // Kosong = tampil kotak placeholder.
   PHOTOS: {
-    hero: "",
-    deluxe: "", grand: "", family: "", suite: "",
-    ambience1: "", ambience2: "", ambience3: "",
-    ig1: "", ig2: "", ig3: "", ig4: "", ig5: "", ig6: "",
-    closing: ""
+    hero: "foto/hero.jpg",
+    deluxe: "foto/kamar-deluxe.jpg",          // tipe kamar di foto ini belum dipastikan
+    grand: "foto/kamar-grand-deluxe.jpg",     // tipe kamar di foto ini belum dipastikan
+    family: "foto/kamar-family.jpg",          // tipe kamar di foto ini belum dipastikan
+    suite: "foto/kamar-suite.jpg",            // diberi label "Suite Room" oleh Aluna Hill
+    ambience1: "foto/suasana-lobi.jpg",
+    ambience2: "foto/suasana-sofa.jpg",
+    ambience3: "foto/suasana-fasad.jpg",
+    ig1: "foto/ig-1.jpg", ig2: "foto/ig-2.jpg", ig3: "foto/ig-3.jpg",
+    ig4: "foto/ig-4.jpg", ig5: "foto/ig-5.jpg", ig6: "foto/ig-6.jpg",
+    closing: "foto/penutup.jpg"
   }
 };
 
