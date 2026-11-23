@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aluna Hill Bukittinggi</title>
+<!-- Contoh desain: jangan diindeks Google sampai disetujui pemilik -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Aluna Hill Bukittinggi — Stay in Serenity. Penginapan untuk family staycation di Kota Bukittinggi. Pesan kamar langsung via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   Aluna Hill Bukittinggi — contoh halaman depan
+   Contoh desain oleh Creaplin. Nomor WA & foto diatur di
+   bagian CONFIG pada <script> paling bawah.
+   ========================================================= */
+:root{
+  --bg:#F3F1EC;
+  --bg-2:#ECE9E2;
+  --ink:#1C1C1A;
+  --muted:#8F8D87;
+  --soft:#B7B4AD;
+  --line:#DCD8D0;
+  --accent:#3E5546;      /* hijau bukit, dipakai sangat sedikit */
+  --on-ink:#F3F1EC;
+  --radius-pill:999px;
+  --gutter:clamp(16px,2.2vw,28px);
+  --max:1240px;
+  --display:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --text:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--text);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.muted{color:var(--muted)}
+.soft{color:var(--soft)}
+.eyebrow{font-size:12px;letter-spacing:.02em;color:var(--muted)}
+.ulink{text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+.ulink:hover{opacity:.7}
+
+/* ---------- Demo ribbon ---------- */
+.demo{background:var(--ink);color:var(--on-ink);font-size:12px;text-align:center;padding:7px 16px}
+.demo b{font-weight:500}
+
+/* ---------- Header ---------- */
+header.top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.top .wrap{display:flex;align-items:center;gap:24px;height:64px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;white-space:nowrap}
+.brand strong{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+.brand .where{font-size:12px;color:var(--muted);padding-left:10px;border-left:1px solid var(--line)}
+.brand .where span{color:var(--ink)}
+nav.menu{display:flex;gap:26px;margin:0 auto;font-size:14px}
+nav.menu a{text-decoration:none}
+nav.menu a:hover{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;text-decoration:none;font:500 14px/1 var(--text);border-radius:var(--radius-pill);padding:13px 20px;transition:transform .2s ease,opacity .2s ease;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn-dark{background:var(--ink);color:var(--on-ink)}
+.btn-light{background:var(--on-ink);color:var(--ink)}
+.btn svg{width:16px;height:16px;flex:none}
+
+/* ---------- Photo placeholders ---------- */
+.ph{position:relative;background:var(--bg-2);overflow:hidden;background-size:cover;background-position:center}
+.ph:not(.has-img){background-image:repeating-linear-gradient(135deg,transparent 0 14px,rgba(0,0,0,.035) 14px 15px)}
+.ph:not(.has-img)::after{content:"FOTO PLACEHOLDER · " attr(data-label);position:absolute;left:14px;bottom:12px;font:500 10.5px/1.3 var(--text);letter-spacing:.06em;color:var(--muted);background:var(--bg);padding:6px 9px;border-radius:4px;max-width:calc(100% - 28px)}
+.ph.has-img::after{content:none}
+
+/* ---------- Hero ---------- */
+.hero{padding:28px 0 0}
+.hero .grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,2fr);gap:var(--gutter);min-height:min(78vh,720px)}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,4.4vw,62px);line-height:1.02;letter-spacing:-.035em;margin:12px 0 0}
+.hero h1 .soft{display:block}
+.hero .left{display:flex;flex-direction:column;justify-content:space-between;padding-bottom:4px}
+.hero .lead{max-width:30ch;color:var(--muted);margin:22px 0 0}
+.hero-index{display:flex;align-items:flex-end;gap:22px;margin-top:40px}
+.hero-index .big{font-family:var(--display);font-weight:300;font-size:clamp(120px,13vw,190px);line-height:.78;letter-spacing:-.06em}
+.hero-index h3{font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:-.01em;margin:0 0 4px}
+.hero-index p{margin:0 0 10px;color:var(--muted);font-size:14px;max-width:24ch}
+.hero .photo{border-radius:2px;min-height:420px}
+
+/* ---------- Booking bar ---------- */
+.book{margin-top:56px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.book form{display:grid;grid-template-columns:1fr 1fr 1fr auto;align-items:stretch}
+.field{padding:18px 20px 18px 0;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0}
+.field+.field{padding-left:20px;border-left:1px solid var(--line)}
+.field label{font-size:12px;color:var(--muted)}
+.field input[type=date]{font:400 20px/1.2 var(--display);letter-spacing:-.01em;color:var(--ink);background:transparent;border:0;padding:0;width:100%;min-width:0;appearance:none;-webkit-appearance:none}
+.field input[type=date]::-webkit-calendar-picker-indicator{opacity:.45;cursor:pointer}
+.guests{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.guests output{font:400 20px/1.2 var(--display);letter-spacing:-.01em}
+.steps{display:flex;gap:8px}
+.steps button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:16px;line-height:1;cursor:pointer}
+.steps button:hover{border-color:var(--ink)}
+.book .go{display:flex;align-items:center;padding-left:20px;border-left:1px solid var(--line)}
+.book-note{font-size:12px;color:var(--muted);margin:10px 0 0}
+
+/* ---------- Statement ---------- */
+.statement{padding:clamp(80px,11vw,150px) 0 40px}
+.statement .grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,1fr);gap:var(--gutter);align-items:start}
+.statement p.big{font-family:var(--display);font-weight:400;font-size:clamp(28px,3.6vw,50px);line-height:1.08;letter-spacing:-.03em;margin:0}
+.statement p.side{color:var(--muted);font-size:14px;margin:6px 0 0}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gutter);margin-top:clamp(56px,7vw,96px)}
+.fact{border-top:1px solid var(--line);padding-top:18px}
+.fact .n{font-family:var(--display);font-weight:300;font-size:clamp(44px,5vw,72px);line-height:1;letter-spacing:-.045em}
+.fact .l{font-size:13px;color:var(--muted);margin-top:10px}
+
+/* ---------- Rooms ---------- */
+section.rooms{padding:clamp(72px,9vw,120px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:36px}
+.sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(32px,4vw,54px);line-height:1.02;letter-spacing:-.035em;margin:6px 0 0}
+.sec-head p{color:var(--muted);max-width:34ch;margin:0;font-size:14px}
+.rooms .grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.room-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.room{border-bottom:1px solid var(--line)}
+.room a{display:grid;grid-template-columns:28px minmax(0,1fr) auto 20px;align-items:center;gap:16px;padding:22px 0;text-decoration:none;color:var(--soft);transition:color .25s ease}
+.room .no{font-size:12px;align-self:start;padding-top:12px}
+.room h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,2.6vw,34px);letter-spacing:-.03em;margin:0;line-height:1.1}
+.room .desc{font-size:13px;margin:4px 0 0;max-width:42ch}
+.room .ask{font-size:13px}
+.room .arrow{opacity:0;transform:translateX(-4px);transition:.25s ease}
+.room.on a,.room a:hover,.room a:focus-visible{color:var(--ink)}
+.room.on .desc,.room a:hover .desc{color:var(--muted)}
+.room.on .arrow,.room a:hover .arrow{opacity:1;transform:none}
+.room .thumb{display:none}
+.room-photo{position:sticky;top:92px;aspect-ratio:4/5}
+.room-photo .ph{position:absolute;inset:0;opacity:0;transition:opacity .45s ease}
+.room-photo .ph.show{opacity:1}
+.with-every{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:var(--gutter);margin-top:72px}
+.with-every h4{font-family:var(--display);font-weight:500;font-size:17px;margin:0 0 6px;letter-spacing:-.01em}
+.with-every ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:var(--gutter)}
+.with-every li{border-top:1px solid var(--line);padding:13px 0;font-size:14px}
+
+/* ---------- Gallery strip ---------- */
+.strip{display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--gutter);padding-bottom:clamp(72px,9vw,120px)}
+.strip .ph{aspect-ratio:4/3}
+.strip .ph:first-child{aspect-ratio:auto;grid-row:span 2;min-height:100%}
+.strip .cap{grid-column:2/4;display:flex;flex-direction:column;justify-content:flex-end}
+.strip .cap h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,2.6vw,34px);letter-spacing:-.03em;line-height:1.08;margin:0 0 10px}
+.strip .cap p{color:var(--muted);margin:0;max-width:44ch;font-size:14px}
+
+/* ---------- Reviews ---------- */
+section.reviews{padding:clamp(72px,9vw,120px) 0;border-top:1px solid var(--line)}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gutter)}
+.quote blockquote{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(19px,1.7vw,23px);line-height:1.3;letter-spacing:-.015em}
+.quote .who{margin-top:22px;font-size:13px}
+.quote .who b{font-weight:500;display:block}
+.quote .who span{color:var(--muted)}
+.ph-tag{display:inline-block;font-size:10.5px;letter-spacing:.06em;color:var(--muted);border:1px dashed var(--soft);border-radius:4px;padding:4px 8px;margin-bottom:14px}
+
+/* ---------- Location ---------- */
+section.loc{padding:clamp(72px,9vw,120px) 0;border-top:1px solid var(--line)}
+.loc .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:clamp(24px,4vw,56px)}
+.loc address{font-style:normal;font-family:var(--display);font-size:clamp(22px,2.2vw,28px);line-height:1.2;letter-spacing:-.02em;margin:18px 0 26px}
+.loc dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 20px;font-size:14px;border-top:1px solid var(--line);padding-top:18px}
+.loc dt{color:var(--muted)}
+.loc dd{margin:0}
+.loc .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn-line:hover{box-shadow:inset 0 0 0 1px var(--ink)}
+.map{position:relative;min-height:440px;background:var(--bg-2);border-radius:2px;overflow:hidden}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.85) contrast(.95)}
+
+/* ---------- Social ---------- */
+section.social{padding:clamp(72px,9vw,120px) 0;border-top:1px solid var(--line)}
+.feed{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.feed .ph{aspect-ratio:1}
+.feed .ph:not(.has-img)::after{content:"IG " attr(data-label);left:8px;bottom:8px;font-size:9.5px;padding:4px 6px}
+.handles{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- Closing CTA ---------- */
+.closing{position:relative;margin-top:0;color:var(--on-ink);min-height:420px;display:flex;align-items:flex-end}
+.closing .ph{position:absolute;inset:0;background-color:#3a3f3a}
+.closing .ph:not(.has-img){background-image:repeating-linear-gradient(135deg,transparent 0 14px,rgba(255,255,255,.04) 14px 15px)}
+.closing .ph:not(.has-img)::after{top:14px;bottom:auto;background:rgba(255,255,255,.12);color:rgba(255,255,255,.75)}
+.closing .ph::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.45))}
+.closing .wrap{position:relative;width:100%;padding-top:80px;padding-bottom:56px}
+.closing h2{font-family:var(--display);font-weight:400;font-size:clamp(36px,5vw,68px);line-height:1;letter-spacing:-.04em;margin:0 0 28px}
+.closing h2 span{opacity:.6}
+.closing .row{display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px}
+.closing .row a.ulink{font-size:14px}
+
+/* ---------- Footer ---------- */
+footer{padding:64px 0 32px}
+footer .grid{display:grid;grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr));gap:var(--gutter)}
+footer .name{font-family:var(--display);font-size:24px;letter-spacing:-.02em;margin:0 0 10px}
+footer p{color:var(--muted);margin:0;font-size:14px;max-width:32ch}
+footer h5{font-size:12px;font-weight:400;color:var(--muted);margin:0 0 12px}
+footer ul{list-style:none;margin:0;padding:0;font-size:14px;display:grid;gap:8px}
+footer ul a{text-decoration:none}
+footer ul a:hover{color:var(--muted)}
+.foot-index{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gutter);margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:14px}
+.foot-index a{text-decoration:none}
+.foot-index small{display:block;font-size:11px;color:var(--muted)}
+.copy{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:40px;font-size:12px;color:var(--muted)}
+
+/* ---------- Mobile WA bar ---------- */
+.wa-bar{display:none}
+
+/* ---------- Reveal ---------- */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* ---------- Responsive ---------- */
+@media (max-width:980px){
+  nav.menu{display:none}
+  .top .wrap{justify-content:space-between}
+  .hero .grid{grid-template-columns:1fr;min-height:0}
+  .hero .photo{min-height:0;aspect-ratio:4/3;order:2}
+  .hero-index{margin-top:28px}
+  .book form{grid-template-columns:1fr 1fr}
+  .field:nth-child(3){grid-column:1/-1;border-left:0;padding-left:0;border-top:1px solid var(--line)}
+  .book .go{grid-column:1/-1;border-left:0;padding:16px 0 18px;border-top:1px solid var(--line)}
+  .book .go .btn{width:100%;justify-content:center}
+  .statement .grid{grid-template-columns:1fr}
+  .rooms .grid{grid-template-columns:1fr}
+  .room-photo{display:none}
+  .room .thumb{display:block;grid-column:2/-1;aspect-ratio:16/10;margin-top:6px}
+  .room a{grid-template-columns:24px minmax(0,1fr) auto;row-gap:12px;color:var(--ink)}
+  .room .desc{color:var(--muted)}
+  .room .arrow{display:none}
+  .with-every{grid-template-columns:1fr;margin-top:48px}
+  .strip{grid-template-columns:1fr 1fr}
+  .strip .ph:first-child{grid-column:1/-1;grid-row:auto;aspect-ratio:16/10}
+  .strip .cap{grid-column:1/-1}
+  .quotes{grid-template-columns:1fr;gap:44px}
+  .loc .grid{grid-template-columns:1fr}
+  .map{min-height:320px}
+  .feed{grid-template-columns:repeat(3,1fr)}
+  footer .grid{grid-template-columns:1fr 1fr}
+  footer .grid>div:first-child{grid-column:1/-1;margin-bottom:12px}
+  .foot-index{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:14.5px;padding-bottom:76px}
+  .top .wrap{height:56px}
+  .brand .where{display:none}
+  .top .btn{padding:10px 14px;font-size:13px}
+  .top .btn .long{display:none}
+  .hero{padding-top:20px}
+  .hero h1{font-size:clamp(36px,10.5vw,46px)}
+  .hero-index .big{font-size:120px}
+  .field input[type=date],.guests output{font-size:17px}
+  .facts{grid-template-columns:1fr;gap:0}
+  .fact{display:flex;align-items:baseline;gap:16px;padding:14px 0}
+  .fact .l{margin:0}
+  .sec-head{flex-direction:column;align-items:flex-start;gap:12px}
+  .with-every ul{grid-template-columns:1fr}
+  .closing{min-height:380px}
+  .closing .btn{width:100%;justify-content:center}
+  .wa-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .wa-bar .btn{flex:1;justify-content:center;padding:14px 16px}
+  .wa-bar .btn-line{flex:none}
+}
+</style>
+</head>
+<body>
+
+<div class="demo">Contoh desain dari <b>Creaplin</b> untuk Aluna Hill · foto &amp; beberapa teks masih placeholder</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Aluna Hill Bukittinggi, ke atas">
+      <strong>Aluna Hill</strong>
+      <span class="where">Bukittinggi · <span id="secName">Beranda</span></span>
+    </a>
+    <nav class="menu" aria-label="Menu utama">
+      <a href="#kamar">Kamar</a>
+      <a href="#ulasan">Ulasan</a>
+      <a href="#lokasi">Lokasi</a>
+      <a href="#sosial">Instagram</a>
+    </nav>
+    <a class="btn btn-dark" data-wa href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.13c-.25.69-1.44 1.33-1.98 1.38-.51.05-.99.24-3.33-.69-2.82-1.11-4.6-4-4.74-4.18-.14-.19-1.13-1.5-1.13-2.87 0-1.37.72-2.04.97-2.32.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.23.55.79 1.92.86 2.06.07.14.12.3.02.49-.09.19-.14.3-.28.46-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.07.95 1.97 1.25 2.25 1.39.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.28.14.46.21.53.32.07.12.07.67-.18 1.36Z"/></svg>
+      <span>Pesan <span class="long">via WhatsApp</span></span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" data-sec="Beranda">
+    <div class="wrap">
+      <div class="grid">
+        <div class="left rv">
+          <div>
+            <div class="eyebrow">Family Staycation · Kota Bukittinggi</div>
+            <h1>Stay in serenity.<span class="soft">Menginap tenang bersama keluarga.</span></h1>
+            <p class="lead">Penginapan keluarga di Jl. Prof. Hazairin, Bukittinggi. Pilih kamar, tanyakan ketersediaan, lalu pesan langsung lewat WhatsApp.</p>
+          </div>
+          <div class="hero-index">
+            <div class="big" aria-hidden="true">4</div>
+            <div>
+              <h3>Tipe kamar</h3>
+              <p>Dari Deluxe sampai Suite, untuk berdua atau sekeluarga.</p>
+              <a class="ulink" href="#kamar">Lihat kamar ↓</a>
+            </div>
+          </div>
+        </div>
+        <div class="photo ph rv" data-photo="hero" data-label="hero · tampak depan / suasana penginapan" role="img" aria-label="Foto Aluna Hill Bukittinggi"></div>
+      </div>
+
+      <!-- Booking bar -->
+      <div class="book rv" id="pesan">
+        <form id="bookForm" onsubmit="return false">
+          <div class="field">
+            <label for="ci">Check-in</label>
+            <input type="date" id="ci" required>
+          </div>
+          <div class="field">
+            <label for="co">Check-out</label>
+            <input type="date" id="co" required>
+          </div>
+          <div class="field">
+            <label id="gLabel">Jumlah tamu</label>
+            <div class="guests">
+              <output id="gOut" aria-labelledby="gLabel">2 tamu</output>
+              <div class="steps">
+                <button type="button" id="gMinus" aria-label="Kurangi tamu">−</button>
+                <button type="button" id="gPlus" aria-label="Tambah tamu">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="go">
+            <a class="btn btn-dark" id="bookBtn" href="#" target="_blank" rel="noopener">Pesan via WhatsApp <span aria-hidden="true">→</span></a>
+          </div>
+        </form>
+      </div>
+      <p class="book-note">Tanggal &amp; jumlah tamu otomatis masuk ke pesan WhatsApp. Admin akan membalas ketersediaan kamar.</p>
+    </div>
+  </section>
+
+  <!-- ================= STATEMENT ================= -->
+  <section class="statement" data-sec="Tentang">
+    <div class="wrap">
+      <div class="grid">
+        <p class="big rv">Liburan keluarga tidak harus jauh. <span class="muted">Aluna Hill adalah tempat pulang yang tenang di tengah Bukittinggi, untuk anak-anak, orang tua, dan</span> <span class="soft">semua yang ikut dalam satu mobil.</span></p>
+        <p class="side rv">Konsep kami sederhana: family staycation. Kamar yang lapang untuk keluarga, suasana yang tenang, dan pemesanan yang cukup lewat satu chat.</p>
+      </div>
+      <div class="facts">
+        <div class="fact rv"><div class="n">4</div><div class="l">Tipe kamar, dari Deluxe sampai Suite</div></div>
+        <div class="fact rv"><div class="n">1</div><div class="l">Chat WhatsApp untuk pesan kamar</div></div>
+        <div class="fact rv"><div class="n">61</div><div class="l">Jl. Prof. Hazairin, Bukittinggi</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ROOMS ================= -->
+  <section class="rooms" id="kamar" data-sec="Kamar">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Kamar</div>
+          <h2>Empat pilihan, <span class="soft">satu suasana.</span></h2>
+        </div>
+        <p>Ketuk kamar yang Anda minati. Pesan WhatsApp akan terisi nama kamarnya, jadi admin langsung tahu.</p>
+      </div>
+
+      <div class="grid">
+        <ol class="room-list" id="roomList">
+          <li class="room on rv" data-room="deluxe">
+            <a href="#" data-wa data-wa-room="Deluxe Room" target="_blank" rel="noopener">
+              <span class="no">01</span>
+              <span>
+                <h3>Deluxe Room</h3>
+                <p class="desc">Kamar nyaman untuk perjalanan singkat berdua.</p>
+              </span>
+              <span class="ask">Tanyakan</span>
+              <span class="arrow" aria-hidden="true">→</span>
+              <span class="thumb ph" data-photo="deluxe" data-label="Deluxe Room"></span>
+            </a>
+          </li>
+          <li class="room rv" data-room="grand">
+            <a href="#" data-wa data-wa-room="Grand Deluxe" target="_blank" rel="noopener">
+              <span class="no">02</span>
+              <span>
+                <h3>Grand Deluxe</h3>
+                <p class="desc">Ruang lebih lega untuk menginap lebih lama.</p>
+              </span>
+              <span class="ask">Tanyakan</span>
+              <span class="arrow" aria-hidden="true">→</span>
+              <span class="thumb ph" data-photo="grand" data-label="Grand Deluxe"></span>
+            </a>
+          </li>
+          <li class="room rv" data-room="family">
+            <a href="#" data-wa data-wa-room="Family Room" target="_blank" rel="noopener">
+              <span class="no">03</span>
+              <span>
+                <h3>Family Room</h3>
+                <p class="desc">Untuk keluarga yang ingin tetap satu kamar.</p>
+              </span>
+              <span class="ask">Tanyakan</span>
+              <span class="arrow" aria-hidden="true">→</span>
+              <span class="thumb ph" data-photo="family" data-label="Family Room"></span>
+            </a>
+          </li>
+          <li class="room rv" data-room="suite">
+            <a href="#" data-wa data-wa-room="Suite Room" target="_blank" rel="noopener">
+              <span class="no">04</span>
+              <span>
+                <h3>Suite Room</h3>
+                <p class="desc">Pilihan paling lapang untuk momen istimewa.</p>
+              </span>
+              <span class="ask">Tanyakan</span>
+              <span class="arrow" aria-hidden="true">→</span>
+              <span class="thumb ph" data-photo="suite" data-label="Suite Room"></span>
+            </a>
+          </li>
+        </ol>
+
+        <div class="room-photo rv" aria-hidden="true">
+          <div class="ph show" data-for="deluxe" data-photo="deluxe" data-label="Deluxe Room"></div>
+          <div class="ph" data-for="grand" data-photo="grand" data-label="Grand Deluxe"></div>
+          <div class="ph" data-for="family" data-photo="family" data-label="Family Room"></div>
+          <div class="ph" data-for="suite" data-photo="suite" data-label="Suite Room"></div>
+        </div>
+      </div>
+
+      <div class="with-every rv">
+        <div>
+          <h4>Kenapa Aluna Hill</h4>
+          <p class="muted" style="margin:0;font-size:14px">Ringkasnya, untuk tamu yang datang dari Google.</p>
+        </div>
+        <ul>
+          <li>Konsep family staycation</li>
+          <li>Pesan langsung ke admin via WhatsApp</li>
+          <li>Empat tipe kamar untuk berbagai ukuran rombongan</li>
+          <li>Alamat jelas, mudah dicari di Google Maps</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY STRIP ================= -->
+  <section data-sec="Suasana">
+    <div class="wrap strip">
+      <div class="ph rv" data-photo="ambience1" data-label="suasana / area bersama"></div>
+      <div class="ph rv" data-photo="ambience2" data-label="detail kamar"></div>
+      <div class="ph rv" data-photo="ambience3" data-label="pemandangan / sekitar"></div>
+      <div class="cap rv">
+        <div class="eyebrow">Suasana</div>
+        <h3>Pagi yang pelan, <span class="soft">udara sejuk Bukittinggi.</span></h3>
+        <p>Bagian ini nanti diisi foto-foto dari Instagram Aluna Hill, setelah ada izin dari pemilik.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= REVIEWS ================= -->
+  <section class="reviews" id="ulasan" data-sec="Ulasan">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Ulasan tamu</div>
+          <h2>Kata mereka <span class="soft">yang sudah menginap.</span></h2>
+        </div>
+        <p><span class="ph-tag">PLACEHOLDER</span><br>Contoh tata letak saja. Akan diganti dengan ulasan asli dari Google Maps atau Instagram Aluna Hill.</p>
+      </div>
+      <div class="quotes">
+        <figure class="quote rv" style="margin:0">
+          <blockquote>“[Ulasan tamu asli dari Google Maps tentang kamar dan kebersihan.]”</blockquote>
+          <figcaption class="who"><b>[Nama tamu]</b><span>[Kota] · Family Room</span></figcaption>
+        </figure>
+        <figure class="quote rv" style="margin:0">
+          <blockquote>“[Ulasan tamu asli tentang pelayanan staf dan suasana.]”</blockquote>
+          <figcaption class="who"><b>[Nama tamu]</b><span>[Kota] · Deluxe Room</span></figcaption>
+        </figure>
+        <figure class="quote rv" style="margin:0">
+          <blockquote>“[Ulasan tamu asli tentang lokasi dan pengalaman staycation.]”</blockquote>
+          <figcaption class="who"><b>[Nama tamu]</b><span>[Kota] · Suite Room</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOCATION ================= -->
+  <section class="loc" id="lokasi" data-sec="Lokasi">
+    <div class="wrap grid">
+      <div class="rv">
+        <div class="eyebrow">Lokasi</div>
+        <address>Jl. Prof. Hazairin No.61, Bukit Cangang Kayu Ramang, Kec. Guguk Panjang, Kota Bukittinggi</address>
+        <dl>
+          <dt>Telepon</dt><dd><a class="ulink" href="tel:+627522519222">0752 2519222</a></dd>
+          <dt>WhatsApp</dt><dd><a class="ulink" data-wa href="#" target="_blank" rel="noopener"><span data-wa-display></span></a></dd>
+          <dt>Instagram</dt><dd><a class="ulink" href="https://www.instagram.com/alunahill.bukittinggi/" target="_blank" rel="noopener">@alunahill.bukittinggi</a></dd>
+        </dl>
+        <div class="links">
+          <a class="btn btn-dark" id="mapsBtn" href="#" target="_blank" rel="noopener">Buka di Google Maps <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-line" href="tel:+627522519222">Telepon</a>
+        </div>
+      </div>
+      <div class="map rv">
+        <iframe id="mapFrame" title="Peta lokasi Aluna Hill Bukittinggi" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SOCIAL ================= -->
+  <section class="social" id="sosial" data-sec="Instagram">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Ikuti kami</div>
+          <h2>Lihat suasana terbaru <span class="soft">di Instagram &amp; TikTok.</span></h2>
+        </div>
+        <div class="handles">
+          <a class="btn btn-dark" href="https://www.instagram.com/alunahill.bukittinggi/" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn btn-line" id="tiktokBtn" href="#" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+      <div class="feed rv">
+        <div class="ph" data-photo="ig1" data-label="1"></div>
+        <div class="ph" data-photo="ig2" data-label="2"></div>
+        <div class="ph" data-photo="ig3" data-label="3"></div>
+        <div class="ph" data-photo="ig4" data-label="4"></div>
+        <div class="ph" data-photo="ig5" data-label="5"></div>
+        <div class="ph" data-photo="ig6" data-label="6"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CLOSING ================= -->
+  <section class="closing" data-sec="Pesan">
+    <div class="ph" data-photo="closing" data-label="foto penutup / suasana malam"></div>
+    <div class="wrap rv">
+      <div class="eyebrow" style="color:rgba(255,255,255,.7)">Reservasi</div>
+      <h2>Rencanakan staycation <span>keluarga Anda.</span></h2>
+      <div class="row">
+        <a class="btn btn-light" data-wa href="#" target="_blank" rel="noopener">Pesan via WhatsApp <span aria-hidden="true">→</span></a>
+        <a class="ulink" href="tel:+627522519222">atau telepon 0752 2519222</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <p class="name">Aluna Hill</p>
+        <p>Stay in Serenity. Penginapan untuk family staycation di Kota Bukittinggi, Sumatera Barat.</p>
+      </div>
+      <div>
+        <h5>Penginapan</h5>
+        <ul><li><a href="#kamar">Kamar</a></li><li><a href="#ulasan">Ulasan</a></li><li><a href="#lokasi">Lokasi</a></li></ul>
+      </div>
+      <div>
+        <h5>Ikuti</h5>
+        <ul><li><a href="https://www.instagram.com/alunahill.bukittinggi/" target="_blank" rel="noopener">Instagram</a></li><li><a class="tiktok-link" href="#" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://linktr.ee/alunahill" target="_blank" rel="noopener">Linktree</a></li></ul>
+      </div>
+      <div>
+        <h5>Hubungi</h5>
+        <ul><li><a data-wa href="#" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="tel:+627522519222">0752 2519222</a></li><li>Jl. Prof. Hazairin No.61</li></ul>
+      </div>
+    </div>
+    <div class="foot-index">
+      <a href="#kamar"><small>01</small>Deluxe Room</a>
+      <a href="#kamar"><small>02</small>Grand Deluxe</a>
+      <a href="#kamar"><small>03</small>Family Room</a>
+      <a href="#kamar"><small>04</small>Suite Room</a>
+    </div>
+    <div class="copy">
+      <span>© <span id="yr"></span> Aluna Hill Bukittinggi</span>
+      <span>Contoh desain oleh <a href="https://creaplinverse.github.io" target="_blank" rel="noopener">Creaplin</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Bar WhatsApp menempel di bawah layar HP -->
+<div class="wa-bar">
+  <a class="btn btn-dark" data-wa href="#" target="_blank" rel="noopener">Pesan via WhatsApp</a>
+  <a class="btn btn-line" href="tel:+627522519222" aria-label="Telepon">Telepon</a>
+</div>
+
+<script>
+/* =========================================================
+   CONFIG — ubah di sini saja
+   ========================================================= */
+const CONFIG = {
+  // PLACEHOLDER: nomor dari bio IG (0821-8391-743) baru 11 digit dan
+  // sedang dikonfirmasi ke pemilik. Tulis format internasional tanpa
+  // "+" dan tanpa angka 0 di depan, contoh: "6282183917430".
+  WA_NUMBER: "628218391743",
+  WA_DISPLAY: "0821-8391-743 (belum dikonfirmasi)",
+
+  // Pesan pembuka WhatsApp
+  WA_GREETING: "Halo Aluna Hill, saya ingin reservasi kamar.",
+
+  // PLACEHOLDER: handle TikTok belum dicek. Isi URL lengkapnya.
+  TIKTOK_URL: "https://www.tiktok.com/@alunahill.bukittinggi",
+
+  MAPS_QUERY: "Aluna Hill Bukittinggi, Jl. Prof. Hazairin No.61, Bukittinggi",
+
+  // FOTO: izin pakai foto IG belum ada. Isi path/URL foto di sini
+  // (mis. "foto/hero.jpg"). Kosong = tampil kotak placeholder.
+  PHOTOS: {
+    hero: "",
+    deluxe: "", grand: "", family: "", suite: "",
+    ambience1: "", ambience2: "", ambience3: "",
+    ig1: "", ig2: "", ig3: "", ig4: "", ig5: "", ig6: "",
+    closing: ""
+  }
+};
+
+/* ---------- Foto ---------- */
+document.querySelectorAll("[data-photo]").forEach(el => {
+  const src = CONFIG.PHOTOS[el.dataset.photo];
+  if (src) { el.style.backgroundImage = `url("${src}")`; el.classList.add("has-img"); }
+});
+
+/* ---------- WhatsApp ---------- */
+const fmt = d => d ? new Date(d + "T00:00:00").toLocaleDateString("id-ID",{weekday:"long",day:"numeric",month:"long",year:"numeric"}) : "-";
+let guests = 2;
+function waLink(room){
+  const ci = document.getElementById("ci").value, co = document.getElementById("co").value;
+  const lines = [CONFIG.WA_GREETING, ""];
+  if (room) lines.push("Tipe kamar: " + room);
+  lines.push("Check-in: " + fmt(ci), "Check-out: " + fmt(co), "Jumlah tamu: " + guests + " orang", "", "Apakah masih tersedia? Terima kasih.");
+  return "https://wa.me/" + CONFIG.WA_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
+}
+function refreshLinks(){
+  document.querySelectorAll("[data-wa]").forEach(a => a.href = waLink(a.dataset.waRoom));
+  document.getElementById("bookBtn").href = waLink();
+}
+document.querySelectorAll("[data-wa-display]").forEach(s => s.textContent = CONFIG.WA_DISPLAY);
+
+/* tanggal default: besok s.d. lusa */
+const iso = d => new Date(d.getTime() - d.getTimezoneOffset()*60000).toISOString().slice(0,10);
+const t = new Date(); const d1 = new Date(t); d1.setDate(t.getDate()+1); const d2 = new Date(t); d2.setDate(t.getDate()+2);
+const ci = document.getElementById("ci"), co = document.getElementById("co");
+ci.min = iso(t); ci.value = iso(d1); co.min = iso(d2); co.value = iso(d2);
+ci.addEventListener("change", () => {
+  const n = new Date(ci.value + "T00:00:00"); n.setDate(n.getDate()+1);
+  co.min = iso(n); if (co.value <= ci.value) co.value = iso(n); refreshLinks();
+});
+co.addEventListener("change", refreshLinks);
+const gOut = document.getElementById("gOut");
+function setG(n){ guests = Math.max(1, Math.min(12, n)); gOut.textContent = guests + " tamu"; refreshLinks(); }
+document.getElementById("gMinus").onclick = () => setG(guests-1);
+document.getElementById("gPlus").onclick = () => setG(guests+1);
+refreshLinks();
+
+/* ---------- Maps & TikTok ---------- */
+const q = encodeURIComponent(CONFIG.MAPS_QUERY);
+document.getElementById("mapFrame").src = "https://maps.google.com/maps?q=" + q + "&z=16&output=embed";
+document.getElementById("mapsBtn").href = "https://www.google.com/maps/search/?api=1&query=" + q;
+document.querySelectorAll("#tiktokBtn,.tiktok-link").forEach(a => a.href = CONFIG.TIKTOK_URL);
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* ---------- Kamar: foto ikut kamar yang disorot ---------- */
+const rooms = document.querySelectorAll(".room");
+const photos = document.querySelectorAll(".room-photo .ph");
+rooms.forEach(r => {
+  const on = () => {
+    rooms.forEach(x => x.classList.toggle("on", x === r));
+    photos.forEach(p => p.classList.toggle("show", p.dataset.for === r.dataset.room));
+  };
+  r.addEventListener("mouseenter", on); r.addEventListener("focusin", on);
+});
+
+/* ---------- Reveal & nama bagian di header ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.12});
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+const secName = document.getElementById("secName");
+const so = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) secName.textContent = e.target.dataset.sec; }), {rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("[data-sec]").forEach(s => so.observe(s));
+</script>
+</body>
+</html>
